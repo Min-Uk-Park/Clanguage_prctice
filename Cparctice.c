@@ -2,37 +2,69 @@
 #include <stdlib.h>
 #include <conio.h>
 
+// char Grade(int );
+
+// int main(){
+
+//     int score,grade;
+
+//     printf("성적을 입력하시오. : ");
+//     scanf("%d",&score);
+
+//     grade = Grade(score);
+
+//     printf("등급 : %c\n",grade);
+    
+//     system("pause");
+
+// }
+
+// char Grade(int S){
+
+//     char G;
+//     switch(S/10){
+//         case 10 : G='A'; break;
+//         case 9 : G='A'; break;
+//         case 8 : G='B'; break;
+//         case 7 : G='C'; break;
+//         case 6 : G='D'; break;
+//         default : G='F'; break;
+
+//     }
+
+//     return G;
+// }
+
+int caculate(int ,int ,char );
+
 int main(){
 
-    // int i=1,j,k;
+    int a,b;
+    char x;
 
-    // while(i<=15){
-    //     j=1,k=1;
-    //     while(j<=31-2*i){
-    //             printf("*");
-    //             j++;
-    //     }
-    //     putchar('\n');
-    //     while(k<=i){
-    //         putchar(' ');
-    //         k++;
-    //     }
-    //     i++;
-    // }
+    printf("2개의 정수 입력 : ");
+    scanf("%2d%2d",&a,&b);
 
-    int i,j,k;
+    printf("연산자 입력 [더하기(+), 빼기(-), 곱하기(*), 나누기(/)] : ");
+    scanf("%c%c",&x,&x);
 
-    for(i=1;i<=15;i++){
-        for(j=0;j<=31-2*i;j++){
-            printf("*");
+    printf("%3d%3c%3d = %d\n",a,x,b,caculate(a,b,x));
 
-        }
-        printf("\n");
-        for(k=1;k<=i;k++){
-            printf(" ");
-        }
+    system("pause");
+
+}
+
+int caculate(int a,int b,char x){
+    int result;
+
+    switch(x){
+
+        case '*' : result = a * b; break;
+        case '+' : result = a + b; break;
+        case '/' : result = a / b; break;
+        case '-' : result = a - b; break;
+
     }
 
-     system("pause");
-     return 0;
+    return result;
 }
