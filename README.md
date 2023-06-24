@@ -1,12 +1,19 @@
 # Clanguage_prctice
 Clanguage_practice
-    1일차 : 변수 선언 ~ 반복문 연습 
-    2일차 : 함수(void형(값 반환X), int형, char형)
-    3일차 : 변수의 유효범위, 배열
+    - 1일차 : 변수 선언 ~ 반복문 연습 
+
+    - 2일차 : 함수(void형(값 반환X), int형, char형)
+
+    - 3일차 : 변수의 유효범위, 배열
+
             - 외부 함수 호출 방법
-            -> 호출하는 함수 파일 생성 ( ex) aaa.c )
+            
+            -> 호출하는 함수 파일 생성 ( (ex) aaa.c )
+
             -> 함수 파일 컴파일 (git bash에서 gcc -c aaa.c -o sum.o -> sum.o파일 생성됨)
+
             -> tasks.json파일 수정(tasks안에 아래 코드 추가
+
             {
 			"label": "build",
 			"type": "shell",

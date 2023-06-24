@@ -21,7 +21,7 @@
           "ignoreFailures": true
         }
       ],
-      "preLaunchTask": "build"
+      "preLaunchTask": "C/C++: gcc.exe 활성 파일 빌드"
     },
     {
       "name": "C/C++ Runner: Debug Session",
