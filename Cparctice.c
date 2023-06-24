@@ -2,35 +2,64 @@
 #include <stdlib.h>
 //#include <conio.h>
 
-int power_series(int ,int );
+// int fact(int );
 
-int main(){
+// int main(){
+//     int n,i,result;
 
-    int a,n,result;
+//     printf("정수를 입력하세요. ");
+//     scanf("%d",&n);
 
-    printf("밑과 지수를 입력하세요. ");
-    scanf("%d%d",&a,&n);
+//     i=0;
 
-    result = power_series(a,n);
+//     while(i<=n){
+//         result = fact(i);
+//         printf("%2d! = %10d\n",i,result);
+//         i++;
+//     }
 
-    printf("\n%d ^ %d = %d\n",a,n,result);
+//     system("pause");   
+// }
 
-    system("pause");
+// int fact(int n){
+    
+//     int result=1;
+
+//     if(n>1){
+//         result = n * fact(n-1);
+//     }
+
+//     return result; 
+// }
+
+int fact(int n){
+    
+    if(n>=0){
+        if(n<=1){
+            return 1;
+        }
+        else{
+            return (n * fact(n-1));
+        }    
+    }
+  
 }
 
-int power_series(int a,int n){
 
+int main(){
+   
+    int n,i,result;
 
-    // if(n>1){
-    //     a=a*power_series(a,n-1);
-    // }
+    printf("정수를 입력하세요. ");
+    scanf("%d",&n);
 
-    // return a;
-    int result=1;
+    i=0;
 
-    if(n>=1){
-        result = a * power_series(a,n-1);
+    while(i<=n){
+        result = fact(i);
+        printf("%2d! = %10d\n",i,result);
+        i++;
     }
 
-    return result;
+    system("pause");
 }
