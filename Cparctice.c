@@ -11,7 +11,7 @@ int main(){
     printf("%s\n",&name[2]);
     printf("%s\n",&name[4]);
 
-    // 문자 배열 지정
+    // 문자 배열 지정 -> include <string.h> 정의!!!
     strcpy(major,"정보통신공학부");
     printf("%s\n",&major[0]);
 
