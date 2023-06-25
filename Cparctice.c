@@ -4,16 +4,17 @@
 //#include <conio.h>
 
 int main(){
-    char major[20],name[10] = "박민욱";
 
-    // name은 &name[0]과 같다.
-    printf("%s\n",name);
-    printf("%s\n",&name[2]);
-    printf("%s\n",&name[4]);
+    char name[3][10] = {"박민욱","홍길동","김동현"};
 
-    // 문자 배열 지정 -> include <string.h> 정의!!!
-    strcpy(major,"정보통신공학부");
-    printf("%s\n",&major[0]);
+    int i=0;
+
+    while(i<3){
+    
+        // name[i] 은 &name[i][0] 과 같다!!
+        printf("%s\n",name[i]);
+        i++;
+    }
 
     system("pause");
 }
