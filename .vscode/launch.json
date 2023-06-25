@@ -1,7 +1,6 @@
 {
   "version": "0.2.0",
   "configurations": [
-
     {
       "name": "gcc.exe - 활성 파일 빌드 및 디버그",
       "type": "cppdbg",
@@ -30,8 +29,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/LG/Desktop/C언어_practice/.vscode",
-      "program": "c:/Users/LG/Desktop/C언어_practice/.vscode/build/Debug/outDebug",
+      "cwd": "c:/Users/LG/Desktop/C언어_practice",
+      "program": "c:/Users/LG/Desktop/C언어_practice/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
