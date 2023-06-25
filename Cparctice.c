@@ -3,18 +3,42 @@
 #include <string.h>
 //#include <conio.h>
 
-int main(){
+int near(int num[]){
 
-    char name[3][10] = {"박민욱","홍길동","김동현"};
+    int i=0,min,sub,minsub=100;
 
-    int i=0;
+    while(i<4){
+        if(num[i]!=5){
+            sub = num[i]>5 ? (num[i]-5) : (5-num[i]);
+        }
+        else{
+            sub = 0;
+        }
 
-    while(i<3){
-    
-        // name[i] 은 &name[i][0] 과 같다!!
-        printf("%s\n",name[i]);
-        i++;
+        if(sub<minsub){
+            minsub=sub;
+            min=num[i];
+        }
+       i++;
     }
 
-    system("pause");
+    return min;
 }
+
+int main(){
+    int i,num[5],result;
+
+    for(i=0;i<=4;i++){
+            scanf("%d",&num[i]);
+            
+        }
+        
+    result = near(num);
+
+    printf("가장 가까운 값은 : %d\n",result);
+
+    system("pause");
+
+    }
+
+
