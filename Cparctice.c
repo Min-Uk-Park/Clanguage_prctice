@@ -4,32 +4,37 @@
 //#define _CRT_SECURE_NO_WARNINGS
 //#include <conio.h>
 
-void Star(int star[5][5]){
-    int i=0,j;
+float avg(int score[]){
+    int i=0,sum=0;
+    float avg;
 
     while(i<5){
-        j=0;
-        while(j<5){
-            if(star[i][j]==1) putchar('*');
-            else putchar(' ');
-            j++;
-        }
+        sum+=score[i];
         i++;
-        putchar('\n');
     }
 
-    system("pause");
+    avg = (float)sum/5;
+    return avg;
 }
-
 
 int main(){
+    int score[5],i=0;
+    float Avg;
 
-    int star[5][5] = {{0,0,1,0,0},
-                    {0,1,0,1,0},
-                    {1,0,0,0,1},
-                    {0,1,0,1,0},
-                    {0,0,1,0,0}};
+    printf("score[0]에서부터 score[4]에 입력될 5개의 정수 입력\n");
 
+    while(i<5){
+        scanf("%d",&score[i]);
+        i++;
+        
+    }
+    
+    Avg = avg(score);
 
-    Star(star);
+    printf("배열의 평균 : %.1f\n",Avg);
+    system("pause");
+    
 }
+
+
+  
