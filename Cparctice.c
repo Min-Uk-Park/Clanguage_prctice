@@ -4,38 +4,89 @@
 //#define _CRT_SECURE_NO_WARNINGS
 //#include <conio.h>
 
+// int main(){
+//     int a[5][5]={0,};
+//     int i,j,r=1,n=2,nn,nnn=0,k=1;
+
+//     i=0;
+//     while(i<5){
+//         j=0;
+//         if(i<2){
+//         while(j<r){
+            
+//             a[i][n] = k;
+//             k+=2; 
+//             j++;
+//             n++;
+//         }
+//         n-=2;
+//         r+=2;
+//         i++;
+//         }
+//         else{
+//             nn = nnn;
+//             while(j<r){
+                
+//                 a[i][nn] = k;
+//                 nn++;
+//                 j++;
+//                 k+=2;
+//             }
+//         r-=2;
+//         nnn++;
+//         i++;
+//         }
+       
+//     }
+//     i=0;
+//     while(i<5){
+//         j=0;
+//         while(j<5){
+//             if(a[i][j]!=0){
+//             printf("%3d",a[i][j]);
+            
+//             }
+//             else printf("   ");
+//             j++;
+//         }
+//         putchar('\n');
+//         i++;
+//     }
+
+//     system("pause");
+// }
+
 int main(){
     int a[5][5] = {0,};
-    int i=0,j,k=1,repeat = 5;
-    int x=0,y=-1,s=1;
+    int i=0,j,k,s=2,e=2;
 
-    for(;repeat!=0;){
-        i=0;
-        while(i<repeat){
-            y+=s;
-            a[x][y] = k;
-            k++;
-            
-            i++;
+    k=1;
+    while(k<=25){
+        for(j=s;j<=e;j++){
+            a[i][j] = k;
+            k+=2;
         }
         
-        repeat--;
-        i=0;
-        
-        while(i<repeat){
-            x+=s;
-            a[x][y] = k;
-            k++;
-            i++;
+        i++;
+        if(i<=2){
+            s--;
+            e++;
         }
-        s=-s;
+        else{
+            s++;
+            e--;
+        }
     }
 
     i=0;
     while(i<5){
         j=0;
         while(j<5){
+            if(a[i][j]!=0){
             printf("%3d",a[i][j]);
+            
+            }
+            else printf("   ");
             j++;
         }
         putchar('\n');
@@ -43,5 +94,4 @@ int main(){
     }
 
     system("pause");
-
 }
