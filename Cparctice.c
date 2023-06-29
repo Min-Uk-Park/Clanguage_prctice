@@ -3,95 +3,61 @@
 #include <string.h>
 //#define _CRT_SECURE_NO_WARNINGS
 //#include <conio.h>
+#define MAX 125
 
-// int main(){
-//     int a[5][5]={0,};
-//     int i,j,r=1,n=2,nn,nnn=0,k=1;
+// 선택정렬
+void SelectionSort(int min[],int n){
+    
+    int temp,i,j,MIN,k=1;
 
-//     i=0;
-//     while(i<5){
-//         j=0;
-//         if(i<2){
-//         while(j<r){
-            
-//             a[i][n] = k;
-//             k+=2; 
-//             j++;
-//             n++;
-//         }
-//         n-=2;
-//         r+=2;
-//         i++;
-//         }
-//         else{
-//             nn = nnn;
-//             while(j<r){
+  
+
+    for(i=0;i<n;i++){
+        MIN = min[i];
+        for(j=k;j<n;j++){
+            if(MIN>min[j]){
+                temp = min[i];
+                min[i] = min[j];
+                min[j] = temp;
+                MIN = min[i];
                 
-//                 a[i][nn] = k;
-//                 nn++;
-//                 j++;
-//                 k+=2;
-//             }
-//         r-=2;
-//         nnn++;
-//         i++;
-//         }
-       
-//     }
-//     i=0;
-//     while(i<5){
-//         j=0;
-//         while(j<5){
-//             if(a[i][j]!=0){
-//             printf("%3d",a[i][j]);
-            
-//             }
-//             else printf("   ");
-//             j++;
-//         }
-//         putchar('\n');
-//         i++;
-//     }
-
-//     system("pause");
-// }
-
-int main(){
-    int a[5][5] = {0,};
-    int i=0,j,k,s=2,e=2;
-
-    k=1;
-    while(k<=25){
-        for(j=s;j<=e;j++){
-            a[i][j] = k;
-            k+=2;
-        }
-        
-        i++;
-        if(i<=2){
-            s--;
-            e++;
-        }
-        else{
-            s++;
-            e--;
-        }
-    }
-
-    i=0;
-    while(i<5){
-        j=0;
-        while(j<5){
-            if(a[i][j]!=0){
-            printf("%3d",a[i][j]);
-            
             }
-            else printf("   ");
-            j++;
+            
         }
-        putchar('\n');
-        i++;
+        k++;
+    }
+    for(i=0;i<n;i++){
+        printf("%-2d",min[i]);
+    }
+    printf("\n");
+    system("pause");    
+}
+int main(){
+    int min[MAX];
+    int i,n;
+
+    for(i=0;;i++){
+        scanf("%d",&min[i]);
+        if(min[i]==0) break;
+    }
+    
+    for(i=0;i<MAX;i++){
+        if(min[i]==0) break;
+
     }
 
-    system("pause");
+    n=i;
+
+
+    for(i=0;i<n;i++){
+        printf("%-2d",min[i]);
+
+    }
+
+    putchar('\n');
+
+    SelectionSort(min,n);
+
+    
+    
 }
