@@ -3,61 +3,54 @@
 #include <string.h>
 //#define _CRT_SECURE_NO_WARNINGS
 //#include <conio.h>
-#define MAX 125
+#define MAX 100
 
-// 선택정렬
-void SelectionSort(int min[],int n){
-    
-    int temp,i,j,MIN,k=1;
-
-  
-
-    for(i=0;i<n;i++){
-        MIN = min[i];
-        for(j=k;j<n;j++){
-            if(MIN>min[j]){
-                temp = min[i];
-                min[i] = min[j];
-                min[j] = temp;
-                MIN = min[i];
-                
-            }
-            
-        }
-        k++;
-    }
-    for(i=0;i<n;i++){
-        printf("%-2d",min[i]);
-    }
-    printf("\n");
-    system("pause");    
-}
+// 버블정렬
 int main(){
-    int min[MAX];
-    int i,n;
+    int a[MAX]={0,};
 
-    for(i=0;;i++){
-        scanf("%d",&min[i]);
-        if(min[i]==0) break;
-    }
-    
+    int i,j,n,nn,max,temp=0;
+
     for(i=0;i<MAX;i++){
-        if(min[i]==0) break;
-
+       scanf("%d",&a[i]);
+       if(a[i]==0)break;
     }
 
     n=i;
-
+    nn=i;
 
     for(i=0;i<n;i++){
-        printf("%-2d",min[i]);
-
+        printf("%3d",a[i]);
     }
-
+    
     putchar('\n');
 
-    SelectionSort(min,n);
+    
+
+    for(i=0;i<nn-1;i++){
+        max =a[0]; 
+        for(j=1;j<n;j++){
+            
+            if(max>a[j]){
+                temp = a[j];
+                a[j] = max;
+                a[j-1] = temp;
+                max = a[j];
+            }
+            else {max = a[j];
+                a[j] = max;}
+            
+        }
+        n--;
+    }
 
     
+    for(i=0;i<nn;i++){
+        
+        printf("%3d",a[i]);
+    }
     
+    putchar('\n');
+
+    system("pause");
 }
