@@ -7,48 +7,76 @@
 #define MAX 100
 
 int main(){
-    int a[3],b[3] = {0,},c,i,j;
+    int n,a[MAX][MAX] = {0,};
 
-    while(1){
-        srand(time(NULL));
-        do{
-            b[0]=rand()%9+1;
-            b[1]=rand()%9+1;
-            b[2]=rand()%9+1;
-        }while(b[0]==b[1]||b[0]==b[2]||b[1]==b[2]);
-        while(1){
-            printf("중복하지 않는 세자리 수를 입력하시오. <게임을 끝내려면 0을 입력>");
-            scanf("%d",&c);
-            if(c==0)break;
-            if(c<100||c>=1000){
-                printf(" 세자리 수를 입력해야 합니다.");
-                continue;
+    printf("숫자 입력 : ");
+    scanf("%d",&n);
 
-            }
-            a[0] = c/100;
-            a[1]=(c-a[0]*100)/10;
-            a[2]=c%10;
-            if(a[0]==a[1]||a[0]==a[2]||a[1]==a[2]){
-                printf("같은 숫자를 사용하지 못합니다.\n");
-                continue;
-            }
-            int strike=0,ball=0;
+    int i,j,r=0,x=-1,y=-1,k=1,s=1;
+    int nn;
 
-            for(i=0;i<3;i++){
-                if(a[i]==b[i])strike++;
-                for(j=0;j<3;j++){
-                    if(i!=j && a[i]==b[j]) ball++;
-                }
+    nn=n;
 
-            }
-            if(strike==3){
-                printf("정답입니다.\n");
-                break;
-            }
-            else{
-                printf("strike : %3d, ball : %3d\n",strike,ball);
-            }
+    for(;;){
+        s=1;
+        for(j=0;j<n;j++){
+            
+            
+            x=x+s;
+            y=y+s;
+            a[x][y] = k;
+            k++;
+            if(k==10) k=0;
+            
         }
-        if(c==0)break;
+        if(n==0) break;
+        n--;
+        //printf("%d",n);
+        
+        s=-1;
+        for(j=0;j<n;j++){
+            
+            
+            y=y+s;
+            a[x][y] = k;
+            k++;
+            if(k==10) k=0;
+        
+        }
+        
+        if(n==0) break;
+        n--;
+
+        for(j=0;j<n;j++){
+            
+            x=x+s;
+
+            a[x][y] = k;
+            
+            k++;
+            if(k==10) k=0;
+            
+        }
+        
+        //s=-s;
+        if(n==0) break;
+        n--;
     }
+
+    printf("%d\n",n);
+
+    for(i=0;i<nn;i++){
+        for(j=0;j<=i;j++){
+       
+            printf("%2d",a[i][j]);
+        
+        
+            
+        }
+        
+        putchar('\n');
+    }
+
+    system("pause");
+
 }
