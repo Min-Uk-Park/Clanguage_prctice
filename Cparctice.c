@@ -6,6 +6,7 @@
 //#include <conio.h>
 #define MAX 100
 
+// 삼각형 달팽이
 int main(){
     int n,a[MAX][MAX] = {0,};
 
