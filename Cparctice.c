@@ -6,78 +6,26 @@
 //#include <conio.h>
 #define MAX 100
 
-// 삼각형 달팽이
 int main(){
-    int n,a[MAX][MAX] = {0,};
 
-    printf("숫자 입력 : ");
-    scanf("%d",&n);
+    int *p,a,b;
+    char *name1,name2[50];
 
-    int i,j,r=0,x=-1,y=-1,k=1,s=1;
-    int nn;
+    strcpy(name2,"홍길동"); //strcpy(char *,) -> char *의 의미는???
+    name1 = "박민욱"; // name = &name[0]
 
-    nn=n;
+    p=&a;
 
-    for(;;){
-        s=1;
-        for(j=0;j<n;j++){
-            
-            
-            x=x+s;
-            y=y+s;
-            a[x][y] = k;
-            k++;
-            if(k==10) k=0;
-            
-        }
-        if(n==0) break;
-        n--;
-        //printf("%d",n);
-        
-        s=-1;
-        for(j=0;j<n;j++){
-            
-            
-            y=y+s;
-            a[x][y] = k;
-            k++;
-            if(k==10) k=0;
-        
-        }
-        
-        if(n==0) break;
-        n--;
+    a=200;
 
-        for(j=0;j<n;j++){
-            
-            x=x+s;
+    // printf("%d %d %d\n",p,*p,a);
+    // printf("%s\n",name1); // %s의 경우 해당 주소부터 출력하는 것을 의미한다. printf("%s",name) = printf("%s",&name[0])이다.
+    // printf("%s",name2);
 
-            a[x][y] = k;
-            
-            k++;
-            if(k==10) k=0;
-            
-        }
-        
-        //s=-s;
-        if(n==0) break;
-        n--;
-    }
-
-    printf("%d\n",n);
-
-    for(i=0;i<nn;i++){
-        for(j=0;j<=i;j++){
-       
-            printf("%2d",a[i][j]);
-        
-        
-            
-        }
-        
-        putchar('\n');
-    }
+    printf("%d\n",&name1[0]);
+    b=4214884;
+    printf("%c\n",b);
+    printf("%c%c%c\n",&name1[0],&name1[1],&name1[2]);
 
     system("pause");
-
 }
