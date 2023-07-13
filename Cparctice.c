@@ -6,64 +6,49 @@
 //#include <conio.h>
 #define MAX 100
 
+
+
 // int main(){
-//     int *p,b[10],n=0;
+//     int a,b,*c,*d,*f;
 
-//     int i=0;
-//     while(i<sizeof(b)/4){
-//         b[i]=n++;
-//         i++;
-//     }
+//     a=10;
+//     b=20;
 
-//     i=0;
-//     while(i<10){
-//         printf("%2d",b[i]);
-//         i++;
-//     }
+
+//     c=&a;
+//     d=&b;
+
+//     printf("%d %d %d %d\n",a,b,&a,&b);  // 10 20 xxxx xxxx
+//     printf("%d %d\n",*c,*d); // 10 20
     
-//     putchar('\n');
-
-//     p=&b[0];
-
-//     i=0;
-//     while(i<10){
-//         printf("%d\n",p); // printf("%d\n",*p);
-//         p++; //주소를 4가 아닌 1씩 증가하는 이유
-//         i++;
-//     }
+//     *(d++)=30;
     
-//     //주소와 포인터의 관계 
-//     // printf("%d\n",sizeof(b)/4);
+//     printf("%d\n",a);
 
+    
+ 
 
 //     system("pause");
+
 // }
 
-
-int sum(int *,int );
 int main(){
-    int *p,result,n;
-    int x[]={1,2,3,4,5,6,7,8,9};
+    int x,*xp;
+    char y,*yp;
 
-    p=&x[0];
+    x=10;
+    y='D';
 
-    n=sizeof(x)/4;
-    result = sum(&x[0],n);
+    xp=&x;
+    yp=&y;
 
-    printf("%d\n",result);
+    printf("%d %c\n",*xp,*yp);
+
+
+    ++*(yp++);
+    *(--yp)=y+3;
+
+    printf("%c\n",y);
     system("pause");
-}
 
-int sum(int *p,int n){
-    int i=0,result=0;
-
-    while(i<n){
-        // result+=*p;
-        // i++;
-        // p++;
-        result+=*(p+i);
-        i++;
-    }
-    
-    return result;
 }
