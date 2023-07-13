@@ -6,26 +6,64 @@
 //#include <conio.h>
 #define MAX 100
 
+// int main(){
+//     int *p,b[10],n=0;
+
+//     int i=0;
+//     while(i<sizeof(b)/4){
+//         b[i]=n++;
+//         i++;
+//     }
+
+//     i=0;
+//     while(i<10){
+//         printf("%2d",b[i]);
+//         i++;
+//     }
+    
+//     putchar('\n');
+
+//     p=&b[0];
+
+//     i=0;
+//     while(i<10){
+//         printf("%d\n",p); // printf("%d\n",*p);
+//         p++; //주소를 4가 아닌 1씩 증가하는 이유
+//         i++;
+//     }
+    
+//     //주소와 포인터의 관계 
+//     // printf("%d\n",sizeof(b)/4);
+
+
+//     system("pause");
+// }
+
+
+int sum(int *,int );
 int main(){
+    int *p,result,n;
+    int x[]={1,2,3,4,5,6,7,8,9};
 
-    int *p,a,b;
-    char *name1,name2[50];
+    p=&x[0];
 
-    strcpy(name2,"홍길동"); //strcpy(char *,) -> char *의 의미는???
-    name1 = "박민욱"; // name = &name[0]
+    n=sizeof(x)/4;
+    result = sum(&x[0],n);
 
-    p=&a;
-
-    a=200;
-
-    // printf("%d %d %d\n",p,*p,a);
-    // printf("%s\n",name1); // %s의 경우 해당 주소부터 출력하는 것을 의미한다. printf("%s",name) = printf("%s",&name[0])이다.
-    // printf("%s",name2);
-
-    printf("%d\n",&name1[0]);
-    b=4214884;
-    printf("%c\n",b);
-    printf("%c%c%c\n",&name1[0],&name1[1],&name1[2]);
-
+    printf("%d\n",result);
     system("pause");
+}
+
+int sum(int *p,int n){
+    int i=0,result=0;
+
+    while(i<n){
+        // result+=*p;
+        // i++;
+        // p++;
+        result+=*(p+i);
+        i++;
+    }
+    
+    return result;
 }
