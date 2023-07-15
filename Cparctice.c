@@ -6,49 +6,26 @@
 //#include <conio.h>
 #define MAX 100
 
+int  main(){
+    char *pa,a;
+    char name[100] = "minuk";
+    char major[100]={0,}; // 초기화 해준다 배열을 왜냐면 쓰레기값이 저장되기 때문이다.
 
-
-// int main(){
-//     int a,b,*c,*d,*f;
-
-//     a=10;
-//     b=20;
-
-
-//     c=&a;
-//     d=&b;
-
-//     printf("%d %d %d %d\n",a,b,&a,&b);  // 10 20 xxxx xxxx
-//     printf("%d %d\n",*c,*d); // 10 20
-    
-//     *(d++)=30;
-    
-//     printf("%d\n",a);
+    major[0] = 's';
+    // name[100] = "minuk";
+    // a='a';
 
     
- 
+    // pa=&a;
 
-//     system("pause");
+    // printf("%c\n",*pa);
+    pa="point";
 
-// }
+    printf("%s\n",pa);
+    printf("%s\n",&name[0]); //printf("%s\n",name)과 같다.
+    printf("%s\n",major);
 
-int main(){
-    int x,*xp;
-    char y,*yp;
-
-    x=10;
-    y='D';
-
-    xp=&x;
-    yp=&y;
-
-    printf("%d %c\n",*xp,*yp);
-
-
-    ++*(yp++);
-    *(--yp)=y+3;
-
-    printf("%c\n",y);
     system("pause");
+
 
 }
