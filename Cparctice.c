@@ -6,26 +6,20 @@
 //#include <conio.h>
 #define MAX 100
 
-int  main(){
-    char *pa,a;
-    char name[100] = "minuk";
-    char major[100]={0,}; // 초기화 해준다 배열을 왜냐면 쓰레기값이 저장되기 때문이다.
+int main(){
+    int a;
+    char b,c[10];
 
-    major[0] = 's';
-    // name[100] = "minuk";
-    // a='a';
-
+    scanf("%d",&a); 
+    // getchar(); // getchar() 써서 Enter에 해당하는 \n값을 저장해준다. 문자입력을 받을 경우 \n같은 형식지정자를 받아오기 때문\
+    에  문자 입력받기 전에 서줘야 한다.
+    // scanf("%c",&b);
     
-    // pa=&a;
+    scanf("%s",c);
 
-    // printf("%c\n",*pa);
-    pa="point";
-
-    printf("%s\n",pa);
-    printf("%s\n",&name[0]); //printf("%s\n",name)과 같다.
-    printf("%s\n",major);
+    printf("%d\n",a);
+    // printf("%c\n",b);
+    printf("%s\n",c);
 
     system("pause");
-
-
 }
