@@ -1,46 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define N 3
 
-// 석차구하기
-void input(int *p){
-    int i=0;
-    while(i<N){
-        scanf("%d",(p+i));
-        i++;
-    }
+struct student{
+    char *name;
+    int age;
+    float grade;
+}group;
 
-}
 
-void rank(int *p,int *r){
-    int i,j;
-
-    for(i=0;i<N;i++){
-        *(r+i)=1;
-        for(j=1;j<N;j++){
-            if(*(p+i)<*(p+j)){
-                *(r+i)+=1;
-            }
-        }
-    }
-}
-void print(int *p,int *r){
-    int i=0;
-    while(i<N){
-        printf("%d => %d\n",*(p+i),*(r+i));
-        i++;
-    }
-}
 
 int main(){
-    int *p,*r;
+    struct student list;
+    list.name = "박민욱";
+    list.age = 23;
+    list.grade = 70.3;
 
-    p=(int *)malloc(N*sizeof(int));
-    r=(int *)malloc(N*sizeof(int));
+    struct student member = {"홍길동",21,77.7};
 
-    input(p);
-    rank(p,r);
-    print(p,r);
+    printf("%s, %d, %.1f\n",list.name,list.age,list.grade);
+    printf("%s, %d, %.1f\n",member.name,member.age,member.grade);
 
+    group.name = "김동현";
+    group.age= 15;
+    group.grade = 66.8;  
+    printf("%s, %d, %.1f\n",group.name,group.age,group.grade);
     system("pause");
 }
+
