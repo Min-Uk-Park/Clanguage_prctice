@@ -5,25 +5,24 @@ struct student{
     char *name;
     int age;
     float grade;
-}group;
-
+}*member;
 
 
 int main(){
-    struct student list;
-    list.name = "박민욱";
-    list.age = 23;
-    list.grade = 70.3;
+    member = malloc(sizeof(struct student));
 
-    struct student member = {"홍길동",21,77.7};
+    (*member).name = "parkminuk";
+    member->age = 23;
+    member->grade = 70.7;
 
-    printf("%s, %d, %.1f\n",list.name,list.age,list.grade);
-    printf("%s, %d, %.1f\n",member.name,member.age,member.grade);
+    printf("%s\n%d\n%.1f\n",(*member).name,member->age, member->grade);
+    printf("%d\n",sizeof(struct student));
 
-    group.name = "김동현";
-    group.age= 15;
-    group.grade = 66.8;  
-    printf("%s, %d, %.1f\n",group.name,group.age,group.grade);
+    (*(member+10)).name = "kimminsuk";
+    (member+10)->age = 20;
+    (member+10)->grade = 66.6;
+    printf("%s\n%d\n%.1f\n",(*(member+10)).name,(member+10)->age, (member+10)->grade);
+
     system("pause");
 }
 
