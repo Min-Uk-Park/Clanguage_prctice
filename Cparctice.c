@@ -1,33 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct student{
-    char name[50];  //-> 포인터는 왜 실행이 안되는가
-    int age;
-    float grade;
-}member[2];
+struct player{
+    char name[30];
+    int u_number;
+};
 
+struct team{
+    int t_number;
+    struct player pitcher;
+    struct player catcher;
+};
 
 int main(){
-    int i=0;
 
-    while(i<2){
-        printf("이름 나이 성적을 차례대로 입력하시오. : ");
-        scanf("%s%d%f",member[i].name,&member[i].age,&member[i].grade);
-        getchar();
-        i++;
-    }
-    
-    printf("%9s%9s%9s\n","이름","나이","성적");
-    puts("================================\n");
+    struct team tiger = {16,{"yang",27},{"kimmin",15}};
+    struct team lion = {20,{"simchangmin",10},{"kangminho",12}};
+    struct team twins = {21,{"chawuchan",27},{"kangnam",17}};
 
-    i=0;
-    while(i<2){
-        printf("%6s%6d%9.1f\n",member[i].name,member[i].age,member[i].grade);
-        i++;
-    }
+  
+
+    printf("기아타이거즈 투수 이름 : %s\n",tiger.pitcher.name);
+    printf("삼성라이온즈 포수 이름 : %s\n",lion.catcher.name);
+    printf("LG twins 투수 등번호 : %d\n",twins.pitcher.u_number);
+
+
     system("pause");
 }
-
-
- 
