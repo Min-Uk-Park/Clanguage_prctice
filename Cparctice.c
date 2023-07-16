@@ -1,29 +1,41 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stddef.h> // offsetof함수 사용 시 선언 
 
-struct player{
-    char name[30];
-    int u_number;
+// offsetof는 상대주소이다. 변위차로 첫 번째 주소로부터 얼마나 떨어져있는지를 나타냄
+struct score{
+    char name[20]; // 20
+    float math,kor,eng; //12
 };
 
-struct team{
-    int t_number;
-    struct player pitcher;
-    struct player catcher;
+struct group{
+    
+    struct score member[3];
+
 };
 
 int main(){
 
-    struct team tiger = {16,{"yang",27},{"kimmin",15}};
-    struct team lion = {20,{"simchangmin",10},{"kangminho",12}};
-    struct team twins = {21,{"chawuchan",27},{"kangnam",17}};
+    struct group group1;
 
-  
+    int a,b,c,d,e,f,g,h,i;
 
-    printf("기아타이거즈 투수 이름 : %s\n",tiger.pitcher.name);
-    printf("삼성라이온즈 포수 이름 : %s\n",lion.catcher.name);
-    printf("LG twins 투수 등번호 : %d\n",twins.pitcher.u_number);
+    a = sizeof(group1.member[0]); //32
+    b = sizeof(group1.member[1]); //32
+    c = sizeof(group1.member[2]); //32
 
+    d = sizeof(group1); // 96
+
+    e = offsetof(struct score,name);
+    f = offsetof(struct score,math);
+    g = offsetof(struct score,eng);
+
+    h = offsetof(struct group,member[0]);
+    i = offsetof(struct group,member[1]);
+
+    printf("%3d%3d%3d%3d\n",a,b,c,d);
+    printf("%3d%3d%3d\n",e,f,g);
+    printf("%3d%3d\n",h,i);
 
     system("pause");
 }
